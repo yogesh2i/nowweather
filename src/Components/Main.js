@@ -139,55 +139,33 @@ useEffect(()=>{
           <Button className='btn-sm' onClick={()=>handleClick('d')}>Daily</Button>
           </div>
           <div className="hourly" id='hourly'>
-            <div className='text-center'>
-            <p>6:00AM</p>
-            <p>{today!==''&&today.hour[6].feelslike_c}°</p>
-            <img src={today!==''?(today.hour[6].condition.icon):undefined} alt="png" />
-            </div>
-            <div className='text-center'>
-            <p>12:00 Noon</p>
-            <p>{today!==''&&today.hour[12].feelslike_c}°</p>
-            <img src={today!==''?(today.hour[12].condition.icon):undefined} alt="png" />
-            </div>
-            <div className='text-center'>
-            <p>3:00 PM</p>
-            <p>{today!==''&&today.hour[15].feelslike_c}°</p>
-            <img src={today!==''?(today.hour[15].condition.icon):undefined} alt="png" />
-            </div>
-            <div className='text-center'>
-            <p>9:00 PM</p>
-            <p>{today!==''&&today.hour[21].feelslike_c}°</p>
-            <img src={today!==''?(today.hour[21].condition.icon):undefined} alt="png" />
-            </div>
-           
+              <ul>
+                {today!==''&&today.hour.map((e,i)=>{
+                  return(
+                    <li className='text-center' key={i}>
+                         <span>{today!==''&&(e.time).slice(-6)}</span>
+                         <p>{today!==''&&e.feelslike_c}°</p>
+                         <span>{today!==''&&e.condition.text}</span>
+                         <img src={today!==''?(e.condition.icon):undefined} alt="png" />
+                    </li>
+                  )
+                })}
+              </ul>
 
           </div>
           <div className="daily" id='daily'>
-            <div className='text-center'>
-            <p>Today</p>
-            <p>{data!==''&&(data.forecast.forecastday[0].day.avgtemp_c)}°</p>
-            <span>{data!==''&&(data.forecast.forecastday[0].day.condition.text)}°</span>
-            <img src={data!==''?((data.forecast.forecastday[0].day.condition.icon)):undefined} alt="png" />
-            </div>
-            <div className='text-center'>
-            <p>{data!==''&&(data.forecast.forecastday[1].date).slice(-5)}</p>
-            <p>{data!==''&&(data.forecast.forecastday[1].day.avgtemp_c)}°</p>
-            <span>{data!==''&&(data.forecast.forecastday[1].day.condition.text)}°</span>
-            <img src={data!==''?((data.forecast.forecastday[1].day.condition.icon)):undefined} alt="png" />
-            </div>
-            <div className='text-center'>
-            <p>{data!==''&&(data.forecast.forecastday[2].date).slice(-5)}</p>
-            <p>{data!==''&&(data.forecast.forecastday[2].day.avgtemp_c)}°</p>
-            <span>{data!==''&&(data.forecast.forecastday[2].day.condition.text)}°</span>
-            <img src={data!==''?((data.forecast.forecastday[2].day.condition.icon)):undefined} alt="png" />
-            </div>
-            <div className='text-center'>
-            <p>{data!==''&&(data.forecast.forecastday[3].date).slice(-5)}</p>
-            <p>{data!==''&&(data.forecast.forecastday[3].day.avgtemp_c)}°</p>
-            <span>{data!==''&&(data.forecast.forecastday[3].day.condition.text)}°</span>
-            <img src={data!==''?((data.forecast.forecastday[3].day.condition.icon)):undefined} alt="png" />
-            </div>
-           
+          <ul>
+                {data!==''&&data.forecast.forecastday.map((e,i)=>{
+                  return(
+                    <li className='text-center' key={i}>
+                      <span>{data!==''&&(e.date).slice(-5)}</span> 
+                         <p>{data!==''&&e.day.avgtemp_c}°</p>
+                         <span>{data!==''&&e.day.condition.text}</span>
+                         <img src={data!==''?(e.day.condition.icon):undefined} alt="png" />
+                    </li>
+                  )
+                })}
+              </ul>
             
           </div>
         </div>

@@ -112,3 +112,14 @@ body{
     display: none;
     align-items: center;
 }
+.hourly ul,.daily ul{
+    display: flex;
+    overflow-x: scroll;
+    justify-content:space-between;
+    padding-left: 0.3rem;
+}
+.hourly ul li,.daily ul li{
+    list-style: none;
+    padding: 0.25rem;
+    border-right: .1px dotted black;
+}
