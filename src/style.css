@@ -6,12 +6,18 @@
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 body {
-  background: linear-gradient(rgb(184, 160, 254) 10%, rgb(232, 209, 242));
+  background: linear-gradient(to bottom, #fceabb,#fccd4d,#f7b733);
+}
+nav,#offcanvasNavbar-expand-lg{
+    background-color: #0c528e;
 }
 .top {
   background: linear-gradient(rgb(125, 125, 239) 20%, rgb(171, 171, 249) 80%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   border-radius: 6px;
-  box-shadow: 2px 2px 2px rgb(184, 160, 254);
+  box-shadow: 1px 1px 1px #203a43;
 }
 
 .address span {
@@ -42,7 +48,7 @@ body {
 .info {
   margin-top: 1rem;
   border-radius: 6px;
-  box-shadow: 2px 2px 2px rgb(232, 209, 242);
+  box-shadow: 1px 1px 1px rgb(232, 209, 242);
   background-color: rgba(251, 252, 252, 0.854);
   padding: 0.5rem;
 }

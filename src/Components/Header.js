@@ -36,7 +36,7 @@ function Header() {
     <>
       <Navbar
         key={expand}
-        bg="primary"
+      
         expand={expand}
         className="mb-3"
         variant="dark"
@@ -48,7 +48,7 @@ function Header() {
             id={`offcanvasNavbar-expand-${expand}`}
             aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
             placement="end"
-            className="bg-primary text-white"
+            className=" text-white"
           >
             <Offcanvas.Header closeButton>
               <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>

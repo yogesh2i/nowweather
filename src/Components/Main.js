@@ -21,6 +21,23 @@ function Main({ place }) {
       let res = await response.json();
       setData(res);
       setToday(res.forecast.forecastday[0]);
+      let s =(data!==''&&(data.location.localtime.slice(-5)))
+      if(data!==''&&(s.slice(0,2))>16){
+        document.body.style.background = "linear-gradient(to bottom, #0f2027,#203a43,#2c5364)";
+        document.getElementById('top').style.backgroundImage="url('https://s.w-x.co/WeatherImages_Web/WeatherImage_MostlyClear-night_1.jpg?crop=16:9&width=800&format=pjpg&auto=webp&quality=70')"
+      }else if(data!==''&&(s.slice(0,2))>11){
+        document.body.style.background = "linear-gradient(to bottom, #fceabb,#fccd4d,#f7b733)";
+        document.getElementById('top').style.backgroundImage="url('https://tse1.mm.bing.net/th?id=OIP.gVIEKIE-jtNJ2fUrsaZB6wHaEK&pid=Api&P=0')"
+      }else if(data!==''&&(s.slice(0,2))>6){
+        document.body.style.background = "linear-gradient(to bottom, #ffd89b,#ffd066,#ffb347)";
+        document.getElementById('top').style.backgroundImage="url('https://tse1.mm.bing.net/th?id=OIP.f743id-Octgs7ZCnuNtBzAHaE8&pid=Api&P=0')"
+      }else{
+        document.body.style.background = "linear-gradient(to bottom, #0f2027,#203a43,#2c5364)";
+        document.getElementById('top').style.backgroundImage="url('https://s.w-x.co/WeatherImages_Web/WeatherImage_MostlyClear-night_1.jpg?crop=16:9&width=800&format=pjpg&auto=webp&quality=70')"
+
+      }
+
+      
     } catch (error) {
       console.log(error);
     }
@@ -46,7 +63,7 @@ function Main({ place }) {
   return (
     <>
       <Container fluid>
-        <div className="container-fluid top text-white">
+        <div className="container-fluid top text-white" id="top">
           <div className="address">
             <span>{data !== "" && data.location.name}</span>&nbsp;As of{" "}
             {data !== "" && data.location.localtime.slice(-5)} IST
