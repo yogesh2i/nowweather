@@ -57,7 +57,7 @@ function Header() {
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="justify-content-start flex-grow-1 pe-3 ml-2">
-                <Nav.Link href="/">Home</Nav.Link>
+                <Nav.Link href="/nowweather">Home</Nav.Link>
 
                 <NavDropdown
                   title="NearBy Places"
