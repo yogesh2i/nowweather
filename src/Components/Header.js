@@ -9,6 +9,7 @@ import Main from "./Main";
 
 function Header() {
   let expand = "lg";
+ 
   let url =
     "https://api.weatherapi.com/v1/search.json?key=f07a9c924a204b2cba1113545232801&q=auto:ip";
   const [query, setQuery] = useState("");
@@ -18,6 +19,7 @@ function Header() {
       let response = await fetch(url);
       let res = await response.json();
       setData(res);
+    
     } catch (error) {
       console.log(error);
     }
@@ -38,7 +40,7 @@ function Header() {
         key={expand}
       
         expand={expand}
-        className="mb-3"
+        // className="mb-3"
         variant="dark"
       >
         <Container fluid>
@@ -80,6 +82,7 @@ function Header() {
           </Navbar.Offcanvas>
         </Container>
       </Navbar>
+      
       {query !== "" ? <Main place={query} /> : <Main place={"auto:ip"} />}
     </>
   );
