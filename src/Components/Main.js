@@ -94,7 +94,7 @@ function Main({ place }) {
               </div>
             </div>
           </div>
-          <div className="info">
+          <div className="info fore">
             <p>Today`s forecast for {data !== "" && data.location.name}</p>
             <div className="shift">
               <div>
