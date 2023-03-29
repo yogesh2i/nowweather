@@ -61,7 +61,7 @@ function Header({func}) {
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="justify-content-start flex-grow-1 pe-3 ml-2">
-                <Nav.Link href="/home">Home</Nav.Link>
+                <Nav.Link href="/nowweather/home">Home</Nav.Link>
 
                 <NavDropdown
                   title="NearBy Places"
@@ -72,7 +72,7 @@ function Header({func}) {
                       return (
                         <span key={i}>
                           
-                         <Link  to="/home/nowweather" onClick={() => handleClick(i)} className="nearby__places">
+                         <Link  to="/nowweather" onClick={() => handleClick(i)} className="nearby__places">
                         
                             {e.name}
                          
