@@ -5,9 +5,9 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Offcanvas from "react-bootstrap/Offcanvas";
-import Main from "./Main";
+import { Link } from "react-router-dom";
 
-function Header() {
+function Header({func}) {
   let expand = "lg";
  
   let url =
@@ -24,16 +24,19 @@ function Header() {
       console.log(error);
     }
   }
-  function handleClick(i) {
+  function handleClick(e,i) {
     setQuery(data[i].url);
     document
-      .getElementById("offcanvasNavbarLabel-expand-lg")
-      .nextSibling.click();
+    .getElementById("offcanvasNavbarLabel-expand-lg")
+    .nextSibling.click();
+    func(data[i].url)
+    console.log(data[i].url)
+    // e.preventDefault();
   }
 
   useEffect(() => {
     fetchPlace(url);
-  }, [url]);
+  }, []);
   return (
     <>
       <Navbar
@@ -59,7 +62,7 @@ function Header() {
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="justify-content-start flex-grow-1 pe-3 ml-2">
-                <Nav.Link href="/nowweather">Home</Nav.Link>
+                <Nav.Link href="/home">Home</Nav.Link>
 
                 <NavDropdown
                   title="NearBy Places"
@@ -68,22 +71,26 @@ function Header() {
                   {data !== "" &&
                     data.map((e, i) => {
                       return (
-                        <>
-                          <NavDropdown.Item onClick={() => handleClick(i)}>
+                        <span key={i}>
+                          
+                         <Link  to="/home/nowweather" onClick={(e) => handleClick(e,i)} className="nearby__places">
+                        
                             {e.name}
-                          </NavDropdown.Item>
+                         
+                          </Link>
+                          
                           <NavDropdown.Divider />
-                        </>
+                        </span>
                       );
                     })}
                 </NavDropdown>
               </Nav>
             </Offcanvas.Body>
           </Navbar.Offcanvas>
-        </Container>
+        </Container> 
       </Navbar>
       
-      {query !== "" ? <Main place={query} /> : <Main place={"auto:ip"} />}
+
     </>
   );
 }

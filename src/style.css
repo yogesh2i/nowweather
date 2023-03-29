@@ -14,6 +14,16 @@ nav,#offcanvasNavbar-expand-lg{
     background-color: #0c528e;
    
 }
+.nearby__places{
+  text-decoration: none;
+  color: black;
+ margin-left: 1rem;
+}
+.nearby__places:hover{
+ 
+  color:#0c528e;
+
+}
 .top {
   background: linear-gradient(rgb(125, 125, 239) 20%, rgb(171, 171, 249) 80%);
   background-position: center;
@@ -47,6 +57,9 @@ nav,#offcanvasNavbar-expand-lg{
 .image {
   display: flex;
   align-items: center;
+}
+.image img{
+  max-width: 70%;
 }
 .info {
   margin-top: 1rem;
@@ -129,6 +142,24 @@ nav,#offcanvasNavbar-expand-lg{
   text-align: center;
   font-weight: 300;
   padding: 1rem;
+}
+.soil__text{
+  display: block;
+  text-align: justify;
+}
+.soil__button{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2px;
+}
+.soil__button a{
+    background-color: #54a2e7;
+    color: black;
+    text-decoration: none;
+    margin: 1px;
+    padding: 2px;
+    border: none;
+    cursor: pointer;
 }
 .Footer{
 color: white;

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Button, Container } from "react-bootstrap";
 import "../style.css";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faWind,
@@ -13,6 +14,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Spinner from "./Spinner";
 import Footer from "./Footer";
+import { Link } from "react-router-dom";
+
+
+
 function Main({ place }) {
 
   const [load, setLoad] = useState(true);
@@ -66,8 +71,10 @@ function Main({ place }) {
       set = "h";
     }
   }
+ 
   return (
     <>
+  
       {load ? <Spinner /> :
 
 
@@ -283,9 +290,24 @@ function Main({ place }) {
               }
             })()}
           </div>
+          <div className="info soil__pollution">
+            <p>Top Trending Stories And News</p>
+            <hr></hr>
+            <i><h5>Soil Pollution</h5></i>
+            <span className="soil__text">
+            Much of the plastic that finds its way into soil is of the single-use variety, says Pradhan. Frequent sources include plastic mulch films, which are used around plants to keep the soil moist, and plastic-encapsulated, slow-release fertilizers, he says. Other plastic products include films for greenhouses and silage, shade and protection nets, and drip irrigation, says Lev Neretin, from the Office of Climate Change, Biodiversity and Environment at FAO.
+            </span>
+            <div className="soil__button">
+           
+            <Link to="/nowweather/soil" >Read More &rarr;</Link>
+              
+            
+            </div>
+          </div>
 
         </Container>}
       {load ? <></> : <Footer />}
+    
     </>
   );
 }
