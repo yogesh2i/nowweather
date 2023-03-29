@@ -12,7 +12,7 @@ function Header({func}) {
  
   let url =
     "https://api.weatherapi.com/v1/search.json?key=f07a9c924a204b2cba1113545232801&q=auto:ip";
-  const [query, setQuery] = useState("");
+ 
   const [data, setData] = useState("");
   async function fetchPlace(url) {
     try {
@@ -24,19 +24,18 @@ function Header({func}) {
       console.log(error);
     }
   }
-  function handleClick(e,i) {
-    setQuery(data[i].url);
+  function handleClick(i) {
+   
     document
     .getElementById("offcanvasNavbarLabel-expand-lg")
     .nextSibling.click();
     func(data[i].url)
-    console.log(data[i].url)
-    // e.preventDefault();
+  
   }
 
   useEffect(() => {
     fetchPlace(url);
-  }, []);
+  }, [url]);
   return (
     <>
       <Navbar
@@ -73,7 +72,7 @@ function Header({func}) {
                       return (
                         <span key={i}>
                           
-                         <Link  to="/home/nowweather" onClick={(e) => handleClick(e,i)} className="nearby__places">
+                         <Link  to="/home/nowweather" onClick={() => handleClick(i)} className="nearby__places">
                         
                             {e.name}
                          
