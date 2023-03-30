@@ -2,6 +2,7 @@
 import {  useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
+
 import Header from "./Components/Header";
 import Main from "./Components/Main";
 import Soil from "./Components/Soil";
@@ -25,6 +26,7 @@ function App() {
         <Route  index element={item !== "" ? <Main place={item} /> : <Main place={"auto:ip"} />}/>
       
         <Route exact path="soil" element={ <Soil/>}></Route>
+      
         </Route>
       </Routes>
       </BrowserRouter>
