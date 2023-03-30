@@ -299,7 +299,7 @@ function Main({ place }) {
             </span>
             <div className="soil__button">
            
-            <Link to="/soil" >Read More &rarr;</Link>
+            <Link to="/nowweather/soil" >Read More &rarr;</Link>
               
             
             </div>

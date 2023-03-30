@@ -20,11 +20,11 @@ function App() {
         
       <BrowserRouter>
       <Routes>
-        <Route exact path="/" element={<Header func={head}/>}>
+        <Route exact path="/nowweather" element={<Header func={head}/>}>
 
         <Route  index element={item !== "" ? <Main place={item} /> : <Main place={"auto:ip"} />}/>
       
-        <Route  path="soil" element={ <Soil/>}></Route>
+        <Route exact path="soil" element={ <Soil/>}></Route>
         </Route>
       </Routes>
       </BrowserRouter>
