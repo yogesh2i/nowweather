@@ -20,12 +20,12 @@ function App() {
         
       <BrowserRouter>
       <Routes>
-        <Route exact path="/*" element={<><Header func={head}/>  {item !== "" ? <Main place={item} /> : <Main place={"auto:ip"} />}</>}>
+        <Route  path="/" element={<Header func={head}/>}>
 
-        {/* <Route  path="/*" element={item !== "" ? <Main place={item} /> : <Main place={"auto:ip"} />}>
-        </Route> */}
+        <Route  index element={item !== "" ? <Main place={item} /> : <Main place={"auto:ip"} />}/>
+      
+        <Route  path="soil" element={ <Soil/>}></Route>
         </Route>
-        <Route  path="/nowweather/soil" element={<><Header func={head}/> <Soil/></>}></Route>
       </Routes>
       </BrowserRouter>
    

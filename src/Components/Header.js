@@ -5,7 +5,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Offcanvas from "react-bootstrap/Offcanvas";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 function Header({func}) {
   let expand = "lg";
@@ -89,7 +89,7 @@ function Header({func}) {
         </Container> 
       </Navbar>
       
-
+     <Outlet/>
     </>
   );
 }
