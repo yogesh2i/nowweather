@@ -5,15 +5,17 @@ import Footer from './Footer';
 
 export default function Soil() {
     const ref1 = useRef();
+   
+        window.scrollTo(0,0)
+    
    const  handleShow=(i)=>{
     if(document.getElementById(i).style.display === "block"){
-        
-        document.getElementById(i).style.display = "none"
-        document.getElementById(`b${i}`).innerText = "+"
+        document.getElementById(i).style.display = "none";
+        document.getElementById(`b${i}`).innerText = "+";
     }else{
 
-        document.getElementById(i).style.display = "block"
-        document.getElementById(`b${i}`).innerText = "-"
+        document.getElementById(i).style.display = "block";
+        document.getElementById(`b${i}`).innerText = "-";
  
     }
      
