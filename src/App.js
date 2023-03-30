@@ -20,7 +20,7 @@ function App() {
         
       <BrowserRouter>
       <Routes>
-        <Route  path="/" element={<Header func={head}/>}>
+        <Route exact path="/" element={<Header func={head}/>}>
 
         <Route  index element={item !== "" ? <Main place={item} /> : <Main place={"auto:ip"} />}/>
       
